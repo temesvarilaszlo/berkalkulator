@@ -30,7 +30,7 @@ const MarriageComponent = ({ justMarried, marriageBonus, marriageDate, handleInp
 
     
     return (
-        <div className='flex flex-row flex-wrap items-center'>
+        <div className='flex flex-row flex-wrap items-center gap-1'>
             <InputSwitch
                 checked={justMarried}
                 onChange={(e) => {

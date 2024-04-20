@@ -50,7 +50,7 @@ const HouseholdSalaryCalculator = () => {
                     defaultPersonState={{...defaultPersonState}}
                 />
             </header>
-            <main>
+            <main className="flex flex-row flex-wrap justify-around gap-2">
                 <SalaryCalculator
                     people={people}
                     setPeople={setPeople}
@@ -58,7 +58,7 @@ const HouseholdSalaryCalculator = () => {
                     setCurrPersonInd={setCurrPersonInd}
                     maxIncome={maxIncome} maxIncomeDigits={maxIncomeDigits}
                 />
-                <HouseholdSummary />
+                <HouseholdSummary people={people}/>
             </main>
         </>
     );

@@ -5,7 +5,7 @@ import IncDecButton from "./IncDecButton";
 const CsaladiKedvezmeny = ({csaladiKedv, eltartottak, kedvezmenyezettek, handleInput}) => {
     return (
         <div className='flex flex-col flex-wrap'>
-            <div className="flex flex-row items-center flex-wrap">
+            <div className="flex flex-row items-center flex-wrap gap-1">
                 <InputSwitch
                     checked={csaladiKedv}
                     onChange={(e) => {

@@ -26,3 +26,20 @@ label{
 .p-tabmenuitem{
   margin-top: 2px;
 }
+
+/* inputswitch bg color */
+span.p-inputswitch-slider {
+  background-color: #e2e8f0;
+}
+
+.p-inputswitch:not(.p-disabled):has(.p-inputswitch-input:hover) .p-inputswitch-slider {
+  background: #b7bcc5;
+}
+
+.p-inputswitch.p-highlight .p-inputswitch-slider{
+  background: #3b82f6;
+}
+
+.p-inputswitch:not(.p-disabled):has(.p-inputswitch-input:hover).p-highlight .p-inputswitch-slider {
+  background: #2563eb;
+}

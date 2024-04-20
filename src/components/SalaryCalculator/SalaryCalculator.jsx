@@ -89,7 +89,7 @@ const SalaryCalculator = ({people, setPeople, currPersonInd, setCurrPersonInd, m
     }
 
     return (
-    <div className=' bg-gray-300 mx-auto rounded-2xl w-3/4 md:w-1/2 p-3 min-w-80'>
+    <div className=' bg-gray-300 rounded-2xl w-3/4 min-w-80 p-3' style={{maxWidth: "500px"}}>
         <button className='float-right' onClick={handleDelete}><i className="pi pi-trash text-xl"></i></button>
 
         <h2 className="text-2xl font-bold">{data.name !== '' ? data.name.trim() : "Személy " + currPersonInd} bérének kiszámítása</h2>
@@ -132,17 +132,17 @@ const SalaryCalculator = ({people, setPeople, currPersonInd, setCurrPersonInd, m
             />
         </div>
         
-        <div className='flex flex-row flex-wrap'>
+        <div className='flex flex-row flex-wrap gap-2 mt-3'>
             <PercentageButton percentage={-5} grossIncome={data.grossIncome} handleInput={handleInput}/>
             <PercentageButton percentage={-1} grossIncome={data.grossIncome} handleInput={handleInput}/>
             <PercentageButton percentage={1} grossIncome={data.grossIncome} handleInput={handleInput}/>
             <PercentageButton percentage={5} grossIncome={data.grossIncome} handleInput={handleInput}/>
         </div>
 
-        <div>
+        <div className='flex flex-col gap-1 mt-2'>
             <h3 className='text-lg font-bold'>Kedvezmények</h3>
 
-            <div className='flex flex-row items-center'>
+            <div className='flex flex-row items-center gap-1'>
                 <InputSwitch
                 checked={data.szjaFree}
                 onChange={(e) => {
@@ -158,7 +158,7 @@ const SalaryCalculator = ({people, setPeople, currPersonInd, setCurrPersonInd, m
             marriageDate={data.marriageDate} handleInput={handleInput} />
             
 
-            <div className='flex flex-row items-center'>
+            <div className='flex flex-row items-center gap-1'>
                 <InputSwitch 
                 checked={data.szemelyiAdoKedv} 
                 onChange={(e) => {
@@ -172,13 +172,11 @@ const SalaryCalculator = ({people, setPeople, currPersonInd, setCurrPersonInd, m
             
             <CsaladiKedvezmeny csaladiKedv={data.csaladiKedv} eltartottak={data.eltartottak} 
             kedvezmenyezettek={data.kedvezmenyezettek} handleInput={handleInput}/>
+        </div>
 
-            
-            <div className="mx-auto my-1 flex flex-col min-w-min">
-                <h3 className=" font-bold mx-auto">Számított nettó bér</h3>
-                <span className=" bg-slate-800 text-white p-4 rounded-md mx-auto">{data.netIncome} Ft</span>
-            </div>
-            
+        <div className="mx-auto my-1 flex flex-col min-w-min">
+            <h3 className=" font-bold mx-auto">Számított nettó bér</h3>
+            <span className=" bg-slate-800 text-white p-4 rounded-md mx-auto">{data.netIncome} Ft</span>
         </div>
     </div>
     );
