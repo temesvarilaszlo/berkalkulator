@@ -57,12 +57,6 @@ const SalaryCalculator = ({people, setPeople, currPersonInd, setCurrPersonInd, m
     console.log(data);
     
     const handleInput = (name, value) => {
-        // if (name === "name"){
-        //     value = value.trim();
-        //     // if (value === ''){
-        //     //     value = "Személy " + currPersonInd;
-        //     // }
-        // }
         if (name === "grossIncome"){
             value = Math.min(Math.max(0, value), maxIncome);
         }
@@ -112,7 +106,7 @@ const SalaryCalculator = ({people, setPeople, currPersonInd, setCurrPersonInd, m
                         newValue = 0;
                     }
                     else{
-                        newValue = parseFloat(e.value.toString().slice(0, maxIncomeDigits)); // Limit to maxLength characters
+                        newValue = parseFloat(e.value.toString().slice(0, maxIncomeDigits));
                     }
                     
                     console.log("asfdasdf", newValue);
@@ -176,7 +170,9 @@ const SalaryCalculator = ({people, setPeople, currPersonInd, setCurrPersonInd, m
 
         <div className="mx-auto my-1 flex flex-col min-w-min">
             <h3 className=" font-bold mx-auto">Számított nettó bér</h3>
-            <span className=" bg-slate-800 text-white p-4 rounded-md mx-auto">{data.netIncome} Ft</span>
+            <span className=" bg-slate-800 text-white p-4 rounded-md mx-auto">
+                { new Intl.NumberFormat('hu-HU').format(data.netIncome) } Ft
+            </span>
         </div>
     </div>
     );

@@ -10,7 +10,6 @@ const FamilyMemberTabs = ({people, setPeople, currPersonInd, setCurrPersonInd, d
         };
     });
     tabItems.push({
-        // label: "+",
         index: tabItems.length,
         icon: 'pi pi-plus',
         command: () => {

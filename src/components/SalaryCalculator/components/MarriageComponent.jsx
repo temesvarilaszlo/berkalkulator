@@ -5,26 +5,21 @@ import { useState } from "react";
 
 function hasMarriageBonus(date) {
     if (!date) return false;
-    // Get the current date
+    
     const currentDate = new Date();
     
-    // Calculate a reference date that is one month earlier than the current date
     const oneMonthEarlierDate = new Date(currentDate);
     oneMonthEarlierDate.setMonth(currentDate.getMonth() - 1);
 
-    // Calculate a reference date that is two years earlier than the current date
     const twoYearsEarlierDate = new Date(currentDate);
     twoYearsEarlierDate.setFullYear(currentDate.getFullYear() - 2);
 
-    // Check if the given date is after the one month earlier date and before or equal to the two years earlier date
     return date <= oneMonthEarlierDate && date > twoYearsEarlierDate && date <= currentDate;
 }
 
 const MarriageComponent = ({ justMarried, marriageBonus, marriageDate, handleInput }) => {
-    // dialog
     const [visible, setVisible] = useState(false);
 
-    // classname for eligibility
     const pColor = marriageBonus ? "bg-green-700" : "bg-red-600";
     const pClassName = pColor + " text-white text-xs p-1 rounded-2xl";
 
