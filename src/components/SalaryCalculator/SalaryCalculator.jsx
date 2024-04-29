@@ -32,10 +32,8 @@ function calcCsaladiKedv(tax, hasCsaladiKedv, eltartottak, kedvezmenyezettek){
     if (!hasCsaladiKedv) return tax;
 
     let csaladiKedvBonus = kedvezmenyezettek < 3 ? kedvezmenyezettek * 10000 : 33000;
-    console.log("csaladiKedvBonus", csaladiKedvBonus);
     
     csaladiKedvBonus *= eltartottak;
-    console.log("csaladiKedvBonus", csaladiKedvBonus);
 
     return Math.max(0, tax - csaladiKedvBonus);
 }
@@ -53,8 +51,6 @@ function calculateNetIncome(person){
 
 const SalaryCalculator = ({people, setPeople, currPersonInd, setCurrPersonInd, maxIncome, maxIncomeDigits}) => {
     let data = people[currPersonInd];
-    
-    console.log(data);
     
     const handleInput = (name, value) => {
         if (name === "grossIncome"){
@@ -108,8 +104,6 @@ const SalaryCalculator = ({people, setPeople, currPersonInd, setCurrPersonInd, m
                     else{
                         newValue = parseFloat(e.value.toString().slice(0, maxIncomeDigits));
                     }
-                    
-                    console.log("asfdasdf", newValue);
                     handleInput("grossIncome", newValue);
                   }}
                 prefix='Ft ' max={maxIncome}

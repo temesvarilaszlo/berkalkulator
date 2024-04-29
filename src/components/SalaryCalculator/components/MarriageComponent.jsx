@@ -34,7 +34,6 @@ const MarriageComponent = ({ justMarried, marriageBonus, marriageDate, handleInp
                         handleInput("marriageBonus", false);
                         handleInput("marriageDate", null);
                     }
-                    console.log("justmarried");
                 }}
                 inputId='justMarried'
             />
@@ -58,7 +57,6 @@ const MarriageComponent = ({ justMarried, marriageBonus, marriageDate, handleInp
                 </p>
                 <Calendar value={marriageDate} 
                 onChange={(e) => {
-                    console.log(e.value);
                     handleInput("marriageDate", e.value);
                     handleInput("marriageBonus", hasMarriageBonus(e.value));
                 }} 

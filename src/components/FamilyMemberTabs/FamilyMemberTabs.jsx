@@ -17,8 +17,6 @@ const FamilyMemberTabs = ({people, setPeople, currPersonInd, setCurrPersonInd, d
         }
     });
 
-    console.log(tabItems);
-
     return (
         <div className="card">
             <TabMenu 
